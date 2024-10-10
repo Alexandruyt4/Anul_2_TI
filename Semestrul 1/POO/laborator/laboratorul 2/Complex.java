@@ -1,6 +1,6 @@
 class Complex {
-    double real;
-    double imaginar;
+    private double real;
+    private double imaginar;
 
     public Complex(double r,double i)
     {
@@ -8,15 +8,29 @@ class Complex {
         imaginar = i;
     }
 
-    private void afisare(double r,double i)
+    public void afisare()
     {
-        System.out.println(r + "+i*" + i);
+        System.out.println(real + "+i*" + imaginar);
     } 
 
 
-    public static void main(String argv[])
+    public Complex Suma(Complex a)
     {
-        Complex(2,3);
+        Complex sum = new Complex(0, 0);
+        sum.real = real + a.real;
+        sum.imaginar = imaginar + a.imaginar;
+        return sum;
     }
+
 }
 
+class main{
+    public static void main(String argv[])
+    {
+        Complex nr1 = new Complex(2, 3);
+        Complex nr2 = new Complex(3, 2);
+        nr1.afisare();
+        nr1 = nr1.Suma(nr2);
+        nr1.afisare();
+    }
+}
