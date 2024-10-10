@@ -1,36 +1,36 @@
 class Complex {
-    private double real;
-    private double imaginar;
+    public static int numardenr ;
+    private double re;
+    private double im;
 
-    public Complex(double r,double i)
+
+    public Complex(double re,double im)
     {
-        real = r;
-        imaginar = i;
+        numardenr++;
+        this.re = re;
+        this.im = im;
     }
 
     public void afisare()
     {
-        System.out.println(real + "+i*" + imaginar);
+        System.out.println(re + "+i*" + im);
     } 
 
 
     public Complex Suma(Complex a)
     {
         Complex sum = new Complex(0, 0);
-        sum.real = real + a.real;
-        sum.imaginar = imaginar + a.imaginar;
+        sum.re = re + a.re;
+        sum.im = im + a.im;
         return sum;
     }
-
-}
-
-class main{
-    public static void main(String argv[])
+    public double modul()
     {
-        Complex nr1 = new Complex(2, 3);
-        Complex nr2 = new Complex(3, 2);
-        nr1.afisare();
-        nr1 = nr1.Suma(nr2);
-        nr1.afisare();
+        return Math.sqrt(re*re+im*im);
+    }
+    public static int getNumber()
+    {
+        return numardenr;
     }
 }
+
