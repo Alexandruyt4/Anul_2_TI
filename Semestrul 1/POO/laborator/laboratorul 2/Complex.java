@@ -1,7 +1,7 @@
 class Complex {
     public static int numardenr ;
-    private double re;
-    private double im;
+    private double re =0;
+    private double im =0;
 
 
     public Complex(double re,double im)
